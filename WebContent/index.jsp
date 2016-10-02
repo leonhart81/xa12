@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>探索世界</title>
 <jsp:include page="styles_frameworks.jsp"></jsp:include>
 <script type="text/javascript">
 $(document).ready(function() {
