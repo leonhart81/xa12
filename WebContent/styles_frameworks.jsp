@@ -7,6 +7,10 @@
 <script src="<c:url value="/bower_components/tether/dist/js/tether.min.js"/>"></script>
 <script src="<c:url value="/bower_components/bootstrap-material-design/dist/bootstrap-material-design.iife.min.js"/>"></script>
 <script src="<c:url value="/bower_components/bootstrap-sweetalert/dist/sweetalert.min.js"/>"></script>
+<script src="<c:url value="/bower_components/handlebars/handlebars.min.js"/>"></script>
+<script src="<c:url value="/bower_components/handlebars/handlebars.amd.min.js"/>"></script>
+<script src="<c:url value="/bower_components/handlebars/handlebars.runtime.min.js"/>"></script>
+<script src="<c:url value="/bower_components/handlebars/handlebars.runtime.amd.min.js"/>"></script>
 
 <%//此處為css區 %>
 <link rel="stylesheet" type="text/css" href="<c:url value="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css"/>">
