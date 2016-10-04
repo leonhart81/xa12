@@ -7,6 +7,7 @@
 <jsp:include page="styles_frameworks.jsp"></jsp:include>
 <script type="text/javascript">
 $(document).ready(function() {
+	$.material.init();
 	$("#hello_jquery").on("click", function() {
 		swal("abc");
 	});
