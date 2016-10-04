@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://granule.com/tags" prefix="g" %>
 
 <meta http-equiv="cache-control" content="no-cache" />
@@ -6,7 +6,7 @@
 <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 <meta http-equiv="pragma" content="no-cache" />
 
-<%--此處為jquery & material-design & handlebars區 --%>
+<%--此處為jquery & material-design & reactjs區 --%>
 <g:compress>
 <script type="text/javascript" src="./bower_components/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -14,7 +14,8 @@
 <script type="text/javascript" src="./bower_components/bootstrap-material-design/dist/js/ripples.min.js"></script>
 <script type="text/javascript" src="./bower_components/bootstrap-material-design/dist/js/material.min.js"></script>
 <script type="text/javascript" src="./bower_components/bootstrap-sweetalert/dist/sweetalert.min.js"></script>
-<script type="text/javascript" src="./bower_components/handlebars/handlebars.min.js"></script>
+<script type="text/javascript" src="./bower_components/react/dist/react.min.js"></script>
+<script type="text/javascript" src="./bower_components/react-dom/dist/react-dom.min.js"></script>
 </g:compress>
 
 <%--此處為css區 --%>

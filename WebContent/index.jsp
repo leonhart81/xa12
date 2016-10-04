@@ -6,15 +6,10 @@
 <title>探索世界</title>
 <jsp:include page="styles_frameworks.jsp"></jsp:include>
 <script type="text/javascript">
-$(document).ready(function() {
-	$.material.init();
-	$("#hello_jquery").on("click", function() {
-		swal("abc");
-	});
-})
+$.material.init();
 </script>
 </head>
 <body>
-<button id="hello_jquery" class="btn btn-raised btn-primary">hello</button>
+<button id="hello_jquery" class="btn btn-raised btn-primary" onclick="swal('Hello, world!')">hello</button>
 </body>
 </html>
