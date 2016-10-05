@@ -14,15 +14,11 @@ import javax.servlet.http.HttpServletResponse;
 public class GZipServletFilter implements Filter {
 
 	@Override
-	public void destroy() {
-		// TODO Auto-generated method stub
-
-	}
+	public void destroy() {}
 
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-		// TODO Auto-generated method stub
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
 		HttpServletResponse httpResponse = (HttpServletResponse) response;
 
@@ -37,10 +33,7 @@ public class GZipServletFilter implements Filter {
 	}
 
 	@Override
-	public void init(FilterConfig arg0) throws ServletException {
-		// TODO Auto-generated method stub
-
-	}
+	public void init(FilterConfig arg0) throws ServletException {}
 
 	private boolean acceptsGZipEncoding(HttpServletRequest httpRequest) {
 		String acceptEncoding = httpRequest.getHeader("Accept-Encoding");

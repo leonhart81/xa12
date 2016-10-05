@@ -15,7 +15,6 @@ public class GZipServletResponseWrapper extends HttpServletResponseWrapper {
 
 	public GZipServletResponseWrapper(HttpServletResponse response) {
 		super(response);
-		// TODO Auto-generated constructor stub
 	}
 
 	public void close() throws IOException {
