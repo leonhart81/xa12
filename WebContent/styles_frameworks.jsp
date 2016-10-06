@@ -26,8 +26,10 @@
 <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap-material-design/dist/css/ripples.min.css">
 <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css">
-<link rel="stylesheet" type="text/css" href="./bower_components/bootstrap-sweetalert/dist/sweetalert.css">
-<link rel="stylesheet" type="text/css" href="./bower_components/bootstrap-material-design/dist/css/fonts.css?family=Roboto:300,400,500,700">
-<link rel="stylesheet" type="text/css" href="./bower_components/bootstrap-material-design/dist/css/icons.css?family=Material+Icons">
+<link rel="stylesheet" type="text/css" href="./bower_components/bootstrap-sweetalert/dist/sweetalert.min.css">
+<link rel="stylesheet" type="text/css" href="./bower_components/bootstrap-material-design/dist/css/bootstrap-material-design-fonts.min.css?family=Roboto:300,400,500,700">
+<link rel="stylesheet" type="text/css" href="./bower_components/bootstrap-material-design/dist/css/bootstrap-material-design-icons.min.css?family=Material+Icons">
+<link rel="stylesheet" type="text/css" href="./bower_components/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="./bower_components/bootstrap-social-gh-pages/bootstrap-social.min.css">
 </g:compress>
 
