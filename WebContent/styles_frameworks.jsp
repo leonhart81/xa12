@@ -27,5 +27,7 @@
 <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap-material-design/dist/css/ripples.min.css">
 <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css">
 <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap-sweetalert/dist/sweetalert.css">
+<link rel="stylesheet" type="text/css" href="./bower_components/bootstrap-material-design/dist/css/fonts.css?family=Roboto:300,400,500,700">
+<link rel="stylesheet" type="text/css" href="./bower_components/bootstrap-material-design/dist/css/icons.css?family=Material+Icons">
 </g:compress>
 
