@@ -1,4 +1,4 @@
-package com.kangdainfo.tcmf.mybatis.mapper.generated;
+package org.xa12.mybatis.mysql.mapper.generated;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Param;

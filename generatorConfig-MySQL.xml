@@ -32,7 +32,7 @@
 			targetProject="xa12" />
 
 		<!-- mapper interface -->
-		<javaClientGenerator targetPackage="com.kangdainfo.tcmf.mybatis.mapper.generated"
+		<javaClientGenerator targetPackage="org.xa12.mybatis.mysql.mapper.generated"
 			targetProject="xa12" type="XMLMAPPER">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
