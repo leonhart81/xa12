@@ -28,6 +28,8 @@ dependencies {
 	compile group: 'org.springframework', name: 'spring-aop', version: '4.3.2.RELEASE'
 	// https://mvnrepository.com/artifact/org.springframework/spring-tx
 	compile group: 'org.springframework', name: 'spring-tx', version: '4.3.2.RELEASE'
+	// https://mvnrepository.com/artifact/org.springframework/spring-jdbc
+	compile group: 'org.springframework', name: 'spring-jdbc', version: '4.3.3.RELEASE'
 	
 	// https://mvnrepository.com/artifact/mysql/mysql-connector-java
 	compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.4'

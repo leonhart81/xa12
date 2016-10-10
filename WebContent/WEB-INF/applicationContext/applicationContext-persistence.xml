@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:aop="http://www.springframework.org/schema/aop" xmlns:oxm="http://www.springframework.org/schema/oxm"
+  xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:jee="http://www.springframework.org/schema/jee"
+  xmlns:tx="http://www.springframework.org/schema/tx"
+  xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  	http://www.springframework.org/schema/beans/spring-beans.xsd
+  	http://www.springframework.org/schema/context
+  	http://www.springframework.org/schema/context/spring-context.xsd
+  	http://www.springframework.org/schema/tx
+  	http://www.springframework.org/schema/tx/spring-tx.xsd
+  	http://www.springframework.org/schema/aop
+  	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/oxm
+	http://www.springframework.org/schema/oxm/spring-oxm.xsd
+  	http://www.springframework.org/schema/jdbc
+	http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+	http://mybatis.org/schema/mybatis-spring
+	http://mybatis.org/schema/mybatis-spring.xsd">
+	
+	<bean id="xa12JdbcTransactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="xa12DataSource" />
+	</bean>
+	
+	<context:annotation-config/>
+	
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    	<property name="basePackage" value="org.xa12.mybatis.mysql.mapper"/>
+    	<property name="sqlSessionFactoryBeanName" value="xa12DcSqlSessionFactory"/>
+	</bean>
+	
+	<bean id="jdbcExceptionTranslator" class="org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator">
+        <property name="dataSource">
+            <ref bean="xa12DataSource"/>
+        </property>
+    </bean>
+    
+    <bean id="jdbcTemplate"
+		class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource">
+			<ref bean="xa12DataSource" />
+		</property>
+	</bean>
+	
+	<tx:advice id="xa12TransactionAdvice" transaction-manager="xa12JdbcTransactionManager">
+        <tx:attributes>
+            <tx:method name="get*"                  propagation="REQUIRED" rollback-for="java.lang.Throwable" read-only="true" />
+            <tx:method name="load*"                 propagation="REQUIRED" rollback-for="java.lang.Throwable" read-only="true" />   
+            <tx:method name="find*"                 propagation="REQUIRED" rollback-for="java.lang.Throwable" read-only="true" />
+            <tx:method name="query*"                propagation="REQUIRED" rollback-for="java.lang.Throwable" read-only="true" />                   
+            <tx:method name="save*"                 propagation="REQUIRED" rollback-for="java.lang.Throwable"/>
+            <tx:method name="insert*"               propagation="REQUIRED" rollback-for="java.lang.Throwable"/>
+            <tx:method name="update*"               propagation="REQUIRED" rollback-for="java.lang.Throwable"/>
+            <tx:method name="delete*"               propagation="REQUIRED" rollback-for="java.lang.Throwable"/>
+            <tx:method name="bulk*"                 propagation="REQUIRED" rollback-for="java.lang.Throwable"/>
+            <tx:method name="test*"                 propagation="REQUIRED" rollback-for="java.lang.Throwable"/>
+            <tx:method name="check*"                propagation="REQUIRED" rollback-for="java.lang.Throwable"/>
+            <tx:method name="authenticate*"         propagation="REQUIRED" rollback-for="java.lang.Throwable"/>         
+            <tx:method name="import*"               propagation="REQUIRED" rollback-for="java.lang.Throwable"/>
+            <tx:method name="export*"               propagation="REQUIRED" rollback-for="java.lang.Throwable"/>
+            <tx:method name="parse*"                propagation="REQUIRED" rollback-for="java.lang.Throwable"/>
+            <tx:method name="generate*"             propagation="REQUIRED" rollback-for="java.lang.Throwable"/>
+            <tx:method name="confirm*"              propagation="REQUIRED" rollback-for="java.lang.Throwable"/>
+            <tx:method name="cancel*"               propagation="REQUIRED" rollback-for="java.lang.Throwable"/>
+            <tx:method name="reject*"               propagation="REQUIRED" rollback-for="java.lang.Throwable"/>
+            <tx:method name="reCreate*"             propagation="REQUIRED" rollback-for="java.lang.Throwable"/>                 
+            <tx:method name="trans*"                propagation="REQUIRED" rollback-for="java.lang.Throwable"/>
+            <tx:method name="change*"               propagation="REQUIRED" rollback-for="java.lang.Throwable"/>
+            <tx:method name="print*"                propagation="REQUIRED" rollback-for="java.lang.Throwable"/>
+            <tx:method name="validate*"             propagation="REQUIRED" rollback-for="java.lang.Throwable"/>
+            <tx:method name="do*"                   propagation="REQUIRED" rollback-for="java.lang.Throwable"/>
+            <tx:method name="make*"                 propagation="REQUIRED" rollback-for="java.lang.Throwable"/>         
+        </tx:attributes>
+    </tx:advice>
+    
+    <!-- 尚缺 AOP SETTINGS -->
+</beans>
