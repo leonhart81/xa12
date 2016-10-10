@@ -33,6 +33,16 @@
     	<property name="sqlSessionFactoryBeanName" value="xa12DcSqlSessionFactory"/>
 	</bean>
 	
+	<!-- 尚缺xa12DcSqlSessionFactory之spring session control bean -->
+	<!--  
+	<bean id="tcmfDcSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean" name="tcmfDcSqlSessionFactory">
+	    <property name="dataSource" ref="tcmfDataSource"></property>
+		<property name="mapperLocations" value="classpath*:com/kangdainfo/tcmf/mybatis/**/*.xml" />  
+		<property name="configLocation" value="/WEB-INF/applicationContext/mybatisConfig.xml" />
+		<property name="typeAliasesPackage" value="com.kangdainfo.tcmf.model.bo" />
+	</bean>
+	-->
+	
 	<bean id="jdbcExceptionTranslator" class="org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator">
         <property name="dataSource">
             <ref bean="xa12DataSource"/>
