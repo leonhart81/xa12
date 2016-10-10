@@ -38,34 +38,6 @@
 		</javaClientGenerator>
 
 		<!-- table config tag can be exist at the same time. -->
-		<table tableName="city" domainObjectName="City"
-			enableCountByExample="true" enableUpdateByExample="true"
-			enableDeleteByExample="true" enableSelectByExample="true"
-			selectByExampleQueryId="true" selectByPrimaryKeyQueryId="true"
-			enableDeleteByPrimaryKey="true" enableInsert="true"
-			enableUpdateByPrimaryKey="true" enableSelectByPrimaryKey="true" >
-			<!-- if use SqlServer to this property, it will translate to SELECT SCOPE_IDENTITY() -->
-			<!-- <generatedKey column="id" sqlStatement="SELECT @@IDENTITY"/> -->     
-			<generatedKey column="id" sqlStatement="SELECT @@IDENTITY" identity="true" />
-			 
-			<!-- <ignoreColumn column="FRED" /> -->
-			<!-- <columnOverride column="columnName" javaType="int"></columnOverride> -->
-		</table>
-		
-		<table tableName="country" domainObjectName="Country"
-			enableCountByExample="true" enableUpdateByExample="true"
-			enableDeleteByExample="true" enableSelectByExample="true"
-			selectByExampleQueryId="true" selectByPrimaryKeyQueryId="true"
-			enableDeleteByPrimaryKey="true" enableInsert="true"
-			enableUpdateByPrimaryKey="true" enableSelectByPrimaryKey="true" >
-			<!-- if use SqlServer to this property, it will translate to SELECT SCOPE_IDENTITY() -->
-			<!-- <generatedKey column="id" sqlStatement="SELECT @@IDENTITY"/> -->     
-			<generatedKey column="id" sqlStatement="SELECT @@IDENTITY" identity="true" />
-			 
-			<!-- <ignoreColumn column="FRED" /> -->
-			<!-- <columnOverride column="columnName" javaType="int"></columnOverride> -->
-		</table>
-		
 		<table tableName="countrylanguage" domainObjectName="CountryLanguage"
 			enableCountByExample="true" enableUpdateByExample="true"
 			enableDeleteByExample="true" enableSelectByExample="true"
@@ -79,5 +51,7 @@
 			<!-- <ignoreColumn column="FRED" /> -->
 			<!-- <columnOverride column="columnName" javaType="int"></columnOverride> -->
 		</table>
+		
+		
 	</context>
 </generatorConfiguration>
