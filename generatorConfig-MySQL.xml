@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<!-- driver path -->
+	<classPathEntry
+		location="C:\Users\user\git\xa12\WebContent\WEB-INF\lib\mysql-connector-java-6.0.4.jar" />
+
+	<context id="context1" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+		<!-- database connection configuration -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/world?serverTimezone=UTC"
+			userId="leonhart811" password="ll812345" />
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- java bean -->
+		<javaModelGenerator targetPackage="org.xa12.model.bo"
+			targetProject="xa12">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<!-- sql mapper xml -->
+		<!-- com.kangdainfo.tcmf.mybatis.mapper.config -->
+		<sqlMapGenerator targetPackage="org.xa12.mybatis.mysql.mapper.config.generated"
+			targetProject="xa12" />
+
+		<!-- mapper interface -->
+		<javaClientGenerator targetPackage="com.kangdainfo.tcmf.mybatis.mapper.generated"
+			targetProject="xa12" type="XMLMAPPER">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+		<!-- table config tag can be exist at the same time. -->
+		<table tableName="city" domainObjectName="City"
+			enableCountByExample="true" enableUpdateByExample="true"
+			enableDeleteByExample="true" enableSelectByExample="true"
+			selectByExampleQueryId="true" selectByPrimaryKeyQueryId="true"
+			enableDeleteByPrimaryKey="true" enableInsert="true"
+			enableUpdateByPrimaryKey="true" enableSelectByPrimaryKey="true" >
+			<!-- if use SqlServer to this property, it will translate to SELECT SCOPE_IDENTITY() -->
+			<!-- <generatedKey column="id" sqlStatement="SELECT @@IDENTITY"/> -->     
+			<generatedKey column="id" sqlStatement="SELECT @@IDENTITY" identity="true" />
+			 
+			<!-- <ignoreColumn column="FRED" /> -->
+			<!-- <columnOverride column="columnName" javaType="int"></columnOverride> -->
+		</table>
+		
+		<table tableName="country" domainObjectName="Country"
+			enableCountByExample="true" enableUpdateByExample="true"
+			enableDeleteByExample="true" enableSelectByExample="true"
+			selectByExampleQueryId="true" selectByPrimaryKeyQueryId="true"
+			enableDeleteByPrimaryKey="true" enableInsert="true"
+			enableUpdateByPrimaryKey="true" enableSelectByPrimaryKey="true" >
+			<!-- if use SqlServer to this property, it will translate to SELECT SCOPE_IDENTITY() -->
+			<!-- <generatedKey column="id" sqlStatement="SELECT @@IDENTITY"/> -->     
+			<generatedKey column="id" sqlStatement="SELECT @@IDENTITY" identity="true" />
+			 
+			<!-- <ignoreColumn column="FRED" /> -->
+			<!-- <columnOverride column="columnName" javaType="int"></columnOverride> -->
+		</table>
+		
+		<table tableName="countrylanguage" domainObjectName="CountryLanguage"
+			enableCountByExample="true" enableUpdateByExample="true"
+			enableDeleteByExample="true" enableSelectByExample="true"
+			selectByExampleQueryId="true" selectByPrimaryKeyQueryId="true"
+			enableDeleteByPrimaryKey="true" enableInsert="true"
+			enableUpdateByPrimaryKey="true" enableSelectByPrimaryKey="true" >
+			<!-- if use SqlServer to this property, it will translate to SELECT SCOPE_IDENTITY() -->
+			<!-- <generatedKey column="id" sqlStatement="SELECT @@IDENTITY"/> -->     
+			<generatedKey column="id" sqlStatement="SELECT @@IDENTITY" identity="true" />
+			 
+			<!-- <ignoreColumn column="FRED" /> -->
+			<!-- <columnOverride column="columnName" javaType="int"></columnOverride> -->
+		</table>
+	</context>
+</generatorConfiguration>
