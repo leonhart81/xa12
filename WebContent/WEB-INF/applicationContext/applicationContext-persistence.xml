@@ -34,14 +34,13 @@
 	</bean>
 	
 	<!-- 尚缺xa12DcSqlSessionFactory之spring session control bean -->
-	<!--  
-	<bean id="tcmfDcSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean" name="tcmfDcSqlSessionFactory">
-	    <property name="dataSource" ref="tcmfDataSource"></property>
-		<property name="mapperLocations" value="classpath*:com/kangdainfo/tcmf/mybatis/**/*.xml" />  
+	<bean id="xa12DcSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean" name="tcmfDcSqlSessionFactory">
+	    <property name="dataSource" ref="xa12DataSource"></property>
+		<property name="mapperLocations" value="classpath*:org/xa12/mybatis/mysql/**/*.xml" />  
 		<property name="configLocation" value="/WEB-INF/applicationContext/mybatisConfig.xml" />
-		<property name="typeAliasesPackage" value="com.kangdainfo.tcmf.model.bo" />
+		<property name="typeAliasesPackage" value="org.xa12.model.bo" />
 	</bean>
-	-->
+	
 	
 	<bean id="jdbcExceptionTranslator" class="org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator">
         <property name="dataSource">
@@ -88,4 +87,13 @@
     </tx:advice>
     
     <!-- 尚缺 AOP SETTINGS -->
+    <aop:config>
+		<aop:pointcut id="service" expression="execution(* org..*Service.*(..))" />
+		<aop:pointcut id="DaoImpl" expression="execution(* org..*DaoImpl.*(..))" />
+		<aop:pointcut id="Mapper"  expression="execution(* org..*Mapper.*(..))" />
+		
+		<aop:advisor advice-ref="xa12TransactionAdvice" pointcut-ref="service" />
+		<aop:advisor advice-ref="xa12TransactionAdvice" pointcut-ref="DaoImpl" />
+		<aop:advisor advice-ref="xa12TransactionAdvice" pointcut-ref="Mapper" />
+	</aop:config>
 </beans>
