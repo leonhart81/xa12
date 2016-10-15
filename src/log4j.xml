@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+
+	<appender name="FILE" class="org.apache.log4j.DailyRollingFileAppender">
+		<errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler" />
+		<param name="Threshold" value="INFO" />
+		<param name="File" value="/opt/temp/prefix.log" />
+		<param name="Append" value="false" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p [%c][%X{Log4jUserId}] %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler" />
+		<param name="Target" value="System.out" />
+		<param name="Threshold" value="DEBUG" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<!-- The default pattern: Date Priority [Category] Message\n -->
+			<param name="ConversionPattern"
+				value="[%d][%p][%X{Log4jUserId}][%c{1}] %m%n" />
+		</layout>
+	</appender>
+
+	<category name="com.arjuna.ats"><priority value="INFO"/></category>
+	<category name="com.ibatis"><priority value="ERROR" /></category><!-- ibatis -->
+	<category name="net.sourceforge.stripes"><priority value="ERROR" /></category><!-- Stripes -->
+	<category name="net.sf.ehcache"><priority value="ERROR" /></category><!-- Encache -->
+	<category name="net.sf.jasperreports"><priority value="INFO"/></category>
+	<category name="net.sf.navigator"><priority value="ERROR" /></category><!-- Struts-Menu -->
+	<category name="org.acegisecurity"><priority value="ERROR" /></category><!-- Acegisecurity -->
+	<category name="org.apache"><priority value="ERROR" /></category><!-- Apache -->
+	<category name="org.displaytag"><priority value="ERROR" /></category><!-- Displaytag -->
+	<category name="org.hibernate"><priority value="ERROR" /></category><!-- Hibernate -->
+	<category name="org.quartz"><priority value="INFO"/></category>
+	<category name="org.springframework"><priority value="ERROR" /></category><!-- Springframework -->
+
+	<category name="com.ibatis"><priority value="DEBUG" /></category>
+	<category name="com.ibatis.common.jdbc.SimpleDataSource"><priority value="INFO" /></category>
+	<category name="com.ibatis.common.jdbc.ScriptRunner"><priority value="INFO" /></category>
+	<category name="java.sql.Connection"><priority value="INFO" /></category>
+	<category name="java.sql.Statement"><priority value="DEBUG" /></category>
+	<category name="java.sql.PreparedStatement"><priority value="DEBUG" /></category>
+	<category name="com.zaxxer.hikari"><priority value="ERROR" /></category>
+
+	<!--<category name="com.xa12"><priority value="DEBUG" /></category>  -->
+	<category name="com.xa12.net.compress"><priority value="INFO"/></category>
+	<root>
+		<appender-ref ref="CONSOLE" />
+		<!-- 
+		<appender-ref ref="FILE" />
+		 -->
+	</root>
+
+</log4j:configuration>

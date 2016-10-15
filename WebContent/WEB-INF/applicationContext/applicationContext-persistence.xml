@@ -33,7 +33,6 @@
     	<property name="sqlSessionFactoryBeanName" value="xa12DcSqlSessionFactory"/>
 	</bean>
 	
-	<!-- 尚缺xa12DcSqlSessionFactory之spring session control bean -->
 	<bean id="xa12DcSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean" name="tcmfDcSqlSessionFactory">
 	    <property name="dataSource" ref="xa12DataSource"></property>
 		<property name="mapperLocations" value="classpath*:org/xa12/mybatis/mysql/**/*.xml" />  
@@ -57,10 +56,12 @@
 	
 	<tx:advice id="xa12TransactionAdvice" transaction-manager="xa12JdbcTransactionManager">
         <tx:attributes>
+        	<!-- R類型之method執行時不使用交易處理  
             <tx:method name="get*"                  propagation="REQUIRED" rollback-for="java.lang.Throwable" read-only="true" />
             <tx:method name="load*"                 propagation="REQUIRED" rollback-for="java.lang.Throwable" read-only="true" />   
             <tx:method name="find*"                 propagation="REQUIRED" rollback-for="java.lang.Throwable" read-only="true" />
-            <tx:method name="query*"                propagation="REQUIRED" rollback-for="java.lang.Throwable" read-only="true" />                   
+            <tx:method name="query*"                propagation="REQUIRED" rollback-for="java.lang.Throwable" read-only="true" />  
+            -->                 
             <tx:method name="save*"                 propagation="REQUIRED" rollback-for="java.lang.Throwable"/>
             <tx:method name="insert*"               propagation="REQUIRED" rollback-for="java.lang.Throwable"/>
             <tx:method name="update*"               propagation="REQUIRED" rollback-for="java.lang.Throwable"/>
@@ -86,7 +87,6 @@
         </tx:attributes>
     </tx:advice>
     
-    <!-- 尚缺 AOP SETTINGS -->
     <aop:config>
 		<aop:pointcut id="service" expression="execution(* org..*Service.*(..))" />
 		<aop:pointcut id="DaoImpl" expression="execution(* org..*DaoImpl.*(..))" />

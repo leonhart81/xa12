@@ -8,6 +8,9 @@
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 	
-	<context:annotation-config />
+	<bean id="queryService" class="org.xa12.core.services.impl.QueryServiceImpl"></bean>
 	
+	<bean id="serviceGetter" class="org.xa12.core.ServiceGetter">
+		<property name="queryService" ref="queryService"></property>
+	</bean>
 </beans>

@@ -3,7 +3,7 @@
 <generatorConfiguration>
 	<!-- driver path -->
 	<classPathEntry
-		location="C:\Users\user\git\xa12\WebContent\WEB-INF\lib\mysql-connector-java-6.0.4.jar" />
+		location="C:\Users\user\git\xa12\WebContent\WEB-INF\lib\mysql-connector-java-5.1.40-bin.jar" />
 
 	<context id="context1" targetRuntime="MyBatis3">
 		<commentGenerator>
@@ -27,7 +27,6 @@
 		</javaModelGenerator>
 
 		<!-- sql mapper xml -->
-		<!-- com.kangdainfo.tcmf.mybatis.mapper.config -->
 		<sqlMapGenerator targetPackage="org.xa12.mybatis.mysql.mapper.config.generated"
 			targetProject="xa12" />
 

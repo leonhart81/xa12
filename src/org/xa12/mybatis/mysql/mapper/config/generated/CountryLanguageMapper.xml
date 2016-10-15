@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.kangdainfo.tcmf.mybatis.mapper.generated.CountryLanguageMapper">
+<mapper namespace="org.xa12.mybatis.mysql.mapper.generated.CountryLanguageMapper">
   <resultMap id="BaseResultMap" type="org.xa12.model.bo.CountryLanguage">
     <result column="CountryCode" jdbcType="CHAR" property="countrycode" />
     <result column="Language" jdbcType="CHAR" property="language" />

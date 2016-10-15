@@ -19,7 +19,6 @@
 <script type="text/javascript" src="./bower_components/babel-standalone/dist/babel.min.js"></script>
 </g:compress>
 
-
 <%--此處為css區 --%>
 <g:compress>
 <link rel="stylesheet" type="text/css" href="./bower_components/tether/dist/css/tether.min.css">
