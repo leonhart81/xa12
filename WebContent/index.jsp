@@ -42,5 +42,17 @@ $.material.init();
 			</div>
 		</div>
 	</div>
+	<div class="container">
+		<div class="well">
+			<form class="form-horizontal" onsubmit="return false;">
+				<fieldset>
+					<div class="form-group">
+						<label for="name" class="control-label">Name:</label>
+						<input id="name" class="form-control" type="text">
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
 </body>
 </html>
