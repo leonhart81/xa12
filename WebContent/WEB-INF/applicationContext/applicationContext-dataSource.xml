@@ -24,6 +24,39 @@
 		<property name="connectionTimeout" value="${dataSource.connectionTimeout}"></property>
 	</bean>
 	
+	<bean id="hikariDataConfigForCachePrepStmts" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+   		<property name="targetObject" ref="hikariDataConfig"/>
+   		<property name="targetMethod" value="addDataSourceProperty"/>
+   		<property name="arguments">
+   			<list>
+   				<value>cachePrepStmts</value>
+   				<value>${dataSource.cachePrepStmts}</value>
+   			</list>
+   		</property>
+ 	</bean>
+ 	
+ 	<bean id="hikariDataConfigForPrepStmtCacheSize" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+   		<property name="targetObject" ref="hikariDataConfig"/>
+   		<property name="targetMethod" value="addDataSourceProperty"/>
+   		<property name="arguments">
+   			<list>
+   				<value>prepStmtCacheSize</value>
+   				<value>${dataSource.prepStmtCacheSize}</value>
+   			</list>
+   		</property>
+ 	</bean>
+ 	
+ 	<bean id="hikariDataConfigForPrepStmtCacheSqlLimit" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+   		<property name="targetObject" ref="hikariDataConfig"/>
+   		<property name="targetMethod" value="addDataSourceProperty"/>
+   		<property name="arguments">
+   			<list>
+   				<value>prepStmtCacheSqlLimit</value>
+   				<value>${dataSource.prepStmtCacheSqlLimit}</value>
+   			</list>
+   		</property>
+ 	</bean>
+	
 	<bean id="xa12DataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
 		<constructor-arg type="com.zaxxer.hikari.HikariConfig" ref="hikariDataConfig"></constructor-arg>
 	</bean>	
