@@ -4,11 +4,49 @@ apply plugin: 'java'
 }
 apply plugin: 'war'
 
-repositories {
-    mavenCentral()
+//default webAppDirName in gradle is not "WebContent" but 
+// it is default in eclipse so change it according to eclipse layout
+// it encapsulates all files under webAppDirName
+webAppDirName = 'WebContent'
+
+// build directory of gradle, it is default "build" and
+// we don't need to change it. I changed because I dont want eclipse
+// and gradle build to be mixed. 
+buildDir = 'gradle_build'
+
+// src is not default java source dir in gradle 
+// so change srcDir and resources srcDir 
+//according to eclipse project layout  
+sourceSets {
+  main {
+     java {
+	      srcDir 'src'
+     }
+     resources {
+       srcDir 'src'
+     }
+  } 
 }
 
+//I have just realized that we did not need repositories definiton below
+//But it should be tested again after removing below lines
+repositories {
+    mavenCentral()
+    flatDir { dirs "WebContent/WEB-INF/lib","libs"}
+}
+
+// In eclipse project, we generally add all dependecies under
+//WEB-INF/lib for runtime.
+// I also used libs directory for only compile time,
+// we added two directory below to make gradle build successfully.
+//It is defined as "providedCompile" which says gradle that do not 
+//add these libraries to
+//war file explicitly because it will be available in runtime.
+//btw, we already let gradle add all files to war under WebContent
 dependencies {
+	providedCompile fileTree(dir:'WebContent/WEB-INF/lib', include:'*.jar')
+  	providedCompile fileTree(dir:'libs', include:'*.jar')
+	
 	// https://mvnrepository.com/artifact/log4j/log4j
 	compile group: 'log4j', name: 'log4j', version: '1.2.17'
 
