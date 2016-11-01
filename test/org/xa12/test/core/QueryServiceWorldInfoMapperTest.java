@@ -12,7 +12,7 @@ public class QueryServiceWorldInfoMapperTest {
 	}
 	
 	public void test() {
-		System.out.println("[selectAllCities] " + mapper.selectAllCities());
+		System.out.println("[selectAllCities] " + mapper.getAllCities());
 	}
 	
 	public static void main(String[] args) {

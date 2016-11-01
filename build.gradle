@@ -109,4 +109,14 @@ dependencies {
 	
 	// https://mvnrepository.com/artifact/com.google.guava/guava
 	compile group: 'com.google.guava', name: 'guava', version: '19.0'
+	
+	// https://mvnrepository.com/artifact/org.glassfish.jersey.core/jersey-client
+	compile group: 'org.glassfish.jersey.core', name: 'jersey-client', version: '2.24'
+	// https://mvnrepository.com/artifact/org.glassfish.jersey.core/jersey-server
+	compile group: 'org.glassfish.jersey.core', name: 'jersey-server', version: '2.24'
+	// https://mvnrepository.com/artifact/org.glassfish.jersey.containers/jersey-container-servlet
+	compile group: 'org.glassfish.jersey.containers', name: 'jersey-container-servlet', version: '2.24'
+	// https://mvnrepository.com/artifact/org.glassfish.jersey.containers/jersey-container-servlet-core
+	compile group: 'org.glassfish.jersey.containers', name: 'jersey-container-servlet-core', version: '2.24'
+	
 }

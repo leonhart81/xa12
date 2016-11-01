@@ -8,16 +8,19 @@ public class ServiceGetter {
 	
 	private static ServiceGetter instance;
 	
-	private ServiceGetter(){}
+	public ServiceGetter() {
+		if (ServiceGetter.instance != null) {
+			throw new RuntimeException(this.getClass().getName() + "is designed to be a Singleton, the instance already exist:"
+					+ ServiceGetter.instance);
+		}
+		ServiceGetter.instance = this;
+	}
 	
 	public static ServiceGetter getInstance() {
-		if (instance != null) {
-			throw new RuntimeException(ServiceGetter.class.getClass() + " is designed to be singleton, the instance has already existed!");
-		}
 		return instance;
 	}
 
-	public QueryService getQueryService() {return queryService;}
+	public QueryService getQueryService() {return this.queryService;}
 
 	public void setQueryService(QueryService queryService) {this.queryService = queryService;}
 }

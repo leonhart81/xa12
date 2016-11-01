@@ -5,5 +5,5 @@ import java.util.List;
 
 public interface WorldInfoMapper {
 	
-	List<HashMap<String, Object>> selectAllCities();
+	List<HashMap<String, Object>> getAllCities();
 }

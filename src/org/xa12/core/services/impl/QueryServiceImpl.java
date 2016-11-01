@@ -9,4 +9,7 @@ public class QueryServiceImpl implements QueryService {
 	
 	@Override
 	public WorldInfoMapper getWorldInfoMapper() {return worldInfoMapper;}
+
+	@Override
+	public void setWorldInfoMapper(WorldInfoMapper worldInfoMapper) {this.worldInfoMapper = worldInfoMapper;}
 }
