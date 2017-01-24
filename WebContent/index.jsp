@@ -6,9 +6,7 @@
 <title>探索世界</title>
 <jsp:include page="styles_frameworks.jsp"></jsp:include>
 <script type="text/javascript">
-$(document).ready(function() {
-	$.material.init();
-});
+$(function() {$.material.init();});
 </script>
 <script type="text/babel">
       ReactDOM.render(
