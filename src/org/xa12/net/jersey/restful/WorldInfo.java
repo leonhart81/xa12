@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;
 
@@ -43,5 +44,16 @@ public class WorldInfo {
 	@Path("/Languages")
 	public List<HashMap<String, Object>> getCountryLanguagesByCode(@QueryParam("countryCode") String countryCode) {
 		return mapper.getCountryLanguagesByCode(countryCode);
+	}
+	
+	/**
+	 * POST
+	 */
+	
+	@POST
+	@Path("/PostCities")
+	public void getCitiesByCountryCodeViaPost(HashMap<String, Object> param) {
+		
+		System.out.println("[param] " + param);
 	}
 }
