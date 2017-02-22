@@ -1,2 +1,4 @@
 /build/
 /generatorConfig-MySQL.xml
+/bin/
+/.gradle/
