@@ -52,8 +52,10 @@ public class WorldInfo {
 	
 	@POST
 	@Path("/PostCities")
-	public void getCitiesByCountryCodeViaPost(HashMap<String, Object> param) {
+	public Object getCitiesByCountryCodeViaPost(HashMap<String, Object> param) {
 		
 		System.out.println("[param] " + param);
+		String countryCode = (String)param.get("countryCode");
+		return mapper.getCitiesByCountryCode(countryCode);
 	}
 }
