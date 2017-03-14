@@ -49,13 +49,12 @@ public class WorldInfo {
 	/**
 	 * POST
 	 */
-	
 	@POST
 	@Path("/PostCities")
-	public Object getCitiesByCountryCodeViaPost(HashMap<String, Object> param) {
-		
-		System.out.println("[param] " + param);
-		String countryCode = (String)param.get("countryCode");
+	public Object getCitiesByCountryCodeViaPost(Object param) {
+		@SuppressWarnings("unchecked")
+		HashMap<String, Object> paramAsMap = (HashMap<String, Object>) param;
+		String countryCode = (String)paramAsMap.get("countryCode");
 		return mapper.getCitiesByCountryCode(countryCode);
 	}
 }
